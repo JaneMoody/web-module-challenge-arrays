@@ -64,9 +64,9 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 
 function is31Flavors(array) {
   if (array.length !== 31) {
-    console.log("false");
+    return false;
   } else {
-    console.log("true");
+    return true;
   }
 }
 console.log(is31Flavors(originalFlavors));
@@ -101,8 +101,7 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(array, string) {
-  array.unshift(string);
+function removeLastFlavor(array) {
   array.pop();
   return array;
 }
@@ -122,7 +121,7 @@ Use the getFlavorByIndex function below to do the following:
 function getFlavorByIndex(array, i) {
   return array[i];
 }
-getFlavorByIndex(orignalFlavors, 2);
+getFlavorByIndex(originalFlavors, 2);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -136,16 +135,29 @@ Use the removeFlavorByName function below to do the following:
     For example: running removeFlavorByName(originalFlavors, "Rocky Road") would return an array with the a length of 30 because Rocky Road would have been removed. 
 
     HINT: You can use .splice() for this
+
+    function filterByWord(array, string) {
+  let newarr = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].includes(string)) {
+      newarr.push(array[i]);
+    }
+  }
+  return newarr;
+}
 */
 
 function removeFlavorByName(array, string) {
-  const index = array.indexOf(string);
-  if (index !== -1) {
-    array.splice(index, 1);
-    return originalFlavors.length;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] == string) {
+      array.splice(i, 1);
+      // if (array[i].includes(string)) {
+      //   array.splice(i, 1);
+    }
   }
+  return array;
 }
-console.log(removeFlavorByName(originalFlavors, "Rocky Road"));
+// console.log(removeFlavorByName(originalFlavors, "Rocky Road"));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
