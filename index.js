@@ -65,8 +65,7 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 function is31Flavors(array) {
   if (array.length !== 31) {
     console.log("false");
-  }
-  if (array.length === 31) {
+  } else {
     console.log("true");
   }
 }
@@ -76,9 +75,9 @@ console.log(is31Flavors(originalFlavors));
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
 
 Use the addFlavor function below to do the following:
-    1. Receive an array
-    2. Receive a new flavor as a string
-    3. Add the passed flavor to the front of the array
+    1. Receive an array (parameter)
+    2. Receive a new flavor as a string (parameter)
+    3. Add the passed flavor to the front of the array  array.unshift(string)
     4. Return the resulting array
 
     For example: addFlavor("Rainbow Sherbert", originalFlavors) should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
@@ -178,6 +177,7 @@ function filterByWord(array, string) {
 }
 
 console.log(filterByWord(originalFlavors, "Chocolate"));
+
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/
 
 /* STRETCH 1: Write a function that returns the average number of words in an array. You should be able to use this function for any array, but can test with originalFlavors.
@@ -190,8 +190,8 @@ Use the getAverageWordLength function below to do the following:
     For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/) {
-  /*code here*/
+function getAverageWordLength(array) {
+  return array;
 }
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
